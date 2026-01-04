@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>🔐 Admin – Add Travel Details</h1>
+
+<form id="travelForm">
+  <input type="text" id="city" placeholder="City" required />
+  <input type="text" id="state" placeholder="State" required />
+  <input type="number" step="any" id="lat" placeholder="Latitude" required />
+  <input type="number" step="any" id="lng" placeholder="Longitude" required />
+  <input type="date" id="startDate" required />
+  <input type="date" id="endDate" required />
+  <button type="submit">Add Travel</button>
+</form>
+
+<p class="note">
+  ⚠️ After adding data, copy the output from console into <b>data.js</b>
+</p>
+
+<script src="data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
