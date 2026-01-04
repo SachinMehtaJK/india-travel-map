@@ -1,21 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>My India Travel Map</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Material Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<h1>Ginny & Sachin Travel Across India</h1>
+<!-- APP BAR -->
+<header class="app-bar">
+  <span> Ginny & Sachin India Travel</span>
+</header>
 
-<div id="map"></div>
+<!-- CONTENT -->
+<main class="container">
 
-<div class="stats">
-  <p><strong>Total Distance:</strong> <span id="distance">0</span> km</p>
-  <p><strong>Total Days Traveled:</strong> <span id="days">0</span></p>
-</div>
+  <!-- MAP CARD -->
+  <section class="card map-card">
+    <div id="map"></div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat-card">
+      <span>Total Distance</span>
+      <strong><span id="distance">0</span> km</strong>
+    </div>
+    <div class="stat-card">
+      <span>Total Days</span>
+      <strong><span id="days">0</span></strong>
+    </div>
+  </section>
+
+</main>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="data.js"></script>

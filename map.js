@@ -24,14 +24,12 @@ function distance(lat1, lon1, lat2, lon2) {
 }
 
 travels.forEach((t, i) => {
- L.marker([t.lat, t.lng])
+L.marker([t.lat, t.lng])
   .addTo(map)
   .bindPopup(`
     <b>${t.city}</b><br>
     ${t.state}<br>
-    <small>
-      📅 ${t.startDate} → ${t.endDate}
-    </small>
+    <small>📅 ${formatDate(t.startDate)} – ${formatDate(t.endDate)}</small>
   `);
 
   points.push([t.lat, t.lng]);
@@ -51,7 +49,29 @@ travels.forEach((t, i) => {
   }
 });
 
-L.polyline(points, { color: 'blue' }).addTo(map);
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+}
+
+
+L.polyline(points, {
+  color: "#007bff",
+  weight: 4,
+  opacity: 0.8
+}).addTo(map);
+
+const route = L.polyline(points, {
+  color: "#1976d2",
+  weight: 4,
+  opacity: 0.9
+}).addTo(map);
+
+map.fitBounds(route.getBounds(), { padding: [30, 30] });
+
 
 document.getElementById("distance").innerText = totalDistance.toFixed(2);
 document.getElementById("days").innerText = totalDays;
