@@ -57,6 +57,14 @@ const travels = [
     endDate: "2026-01-02"
   },
 /* GUJARAT → MAHARASHTRA */
+ {
+    city: "Gir",
+    state: "Gujarat",
+    lat: 21.1240,
+    lng: 70.8242,
+    startDate: "2026-01-03",
+    endDate: "2026-01-06"
+  },
 
   {
     city: "Ahmedabad",
